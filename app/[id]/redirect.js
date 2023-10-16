@@ -1,11 +1,12 @@
 "use client";
 
-import { redirect } from "next/navigation";
 import { useEffect } from "react";
 
 export function Redirect({ url }) {
   useEffect(() => {
-    redirect(url);
+    setTimeout(() => {
+      window.location.replace(url);
+    }, 300);
   }, []);
   return null;
 }
