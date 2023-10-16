@@ -1,4 +1,5 @@
 import { highlight } from "@code-hike/lighter";
+import { Redirect } from "./redirect";
 
 export async function generateMetadata({ params, searchParams }) {
   const gist = await fetchGist(params.id);
