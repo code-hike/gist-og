@@ -1,4 +1,3 @@
-import { redirect } from "next/navigation";
 import { highlight } from "@code-hike/lighter";
 
 export async function generateMetadata({ params, searchParams }) {
@@ -10,7 +9,8 @@ export async function generateMetadata({ params, searchParams }) {
 }
 
 export default async function Page({ params }) {
-  redirect(`https://gist.github.com/${params.id}`);
+  return <Redirect url={`https://gist.github.com/${params.id}`} />;
+
   const gist = await fetchGist(params.id);
   const avatar = gist.owner?.avatar_url;
   const owner = gist.owner?.login;
